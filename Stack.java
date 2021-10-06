@@ -1,0 +1,45 @@
+package Tugas;
+
+public class Stack<Semangat> {
+        public Semangat[] data;
+        public int top = 0;
+
+        public Stack(int n) {
+            data = (Semangat[]) new Object[n];
+        }
+
+        public boolean isEmpty() {
+            return top == 0;
+        }
+
+        public boolean isFull() {
+            return top == data.length;
+
+        }
+        public void push(Semangat value) {
+            if (!isFull()) {
+                data[top] = value;
+                top = top + 1;
+            } else {
+                System.out.println("Stack Penuh");
+            }
+        }
+
+        public Semangat pop() {
+            if (!isEmpty()) {
+                top = top-1;
+                Semangat r = data[top];
+                return r;
+            } else {
+                return null;
+            }
+        }
+
+        public Semangat peek() {
+            if (!isEmpty()) {
+                return data[top - 1];
+            } else {
+                return null;
+            }
+        }
+}
